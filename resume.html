@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naresh Chaudhary - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 14px;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e5e7eb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Summary Section */
+        .summary {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .institution {
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .skill-list {
+            color: #555;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* Projects Section */
+        .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .project-description {
+            color: #555;
+            margin-bottom: 8px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .project-tech {
+            font-size: 12px;
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* Technical Skills */
+        .tech-skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tech-item {
+            background: #e5f3ff;
+            padding: 8px 12px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* Achievements */
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 13px;
+        }
+
+        .achievement-list li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-size: 10px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 12px;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .section {
+                margin-bottom: 20px;
+            }
+            
+            .project-item {
+                break-inside: avoid;
+            }
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">📄 Print/Save as PDF</button>
+    
+    <div class="resume-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 class="name">Naresh Chaudhary</h1>
+            <p class="title">Full Stack Developer & IT Student</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>nareshbhaichaudhary608@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+91 79900 39450</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Ahmedabad, Gujarat, India</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <span>linkedin.com/in/Naresh608</span>
+                </div>
+                <div class="contact-item">
+                    <span>💻</span>
+                    <span>github.com/Naresh608</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Passionate Full Stack Developer and 3rd-year Information Technology student with hands-on experience in modern web technologies. 
+                Skilled in creating responsive web applications using React.js, Node.js, and MongoDB. Strong problem-solving abilities with a focus on 
+                creating innovative solutions for real-world challenges. Committed to writing clean, efficient code and staying updated with the latest 
+                technology trends. Seeking opportunities to contribute to impactful projects and grow professionally in a dynamic development environment.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="degree">Bachelor of Technology in Information Technology</div>
+                <div class="institution">VGEC</div>
+                <div class="duration">2021 - 2026 (Expected) | Currently in 3rd Year</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Higher Secondary Certificate (HSC)</div>
+                <div class="institution">Sankalp School of Science</div>
+                <div class="duration">2022 | 85%</div>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Frontend Development</div>
+                    <div class="skill-list">HTML5, CSS3, JavaScript (ES6+), React.js, Responsive Design, CSS Frameworks</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Backend Development</div>
+                    <div class="skill-list">Node.js, Express.js, MongoDB, PHP, RESTful APIs</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Programming Languages</div>
+                    <div class="skill-list">JavaScript, Java, Python, SQL</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Tools & Technologies</div>
+                    <div class="skill-list">Git & GitHub, VS Code, npm/yarn, Postman, MongoDB Compass</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">Smart Waste Management System</div>
+                <div class="project-description">
+                    Developed a real-time dustbin tracking application that monitors fill levels using IoT sensors and optimizes waste collection routes. 
+                    The system features an admin dashboard for route management and real-time notifications for collection teams.
+                </div>
+                <div class="project-tech">Technologies: Express.js, MongoDB, IoT Integration, Real-time Updates</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">City Bus Booking Application</div>
+                <div class="project-description">
+                    Built a comprehensive online bus ticketing system for local city transport with features including seat selection, 
+                    payment integration, and booking management. Implemented responsive design for seamless mobile experience.
+                </div>
+                <div class="project-tech">Technologies: React.js, Node.js, MongoDB, Payment Gateway Integration</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Personal Portfolio Website</div>
+                <div class="project-description">
+                    Created a fully responsive personal portfolio website featuring dark/light mode toggle, smooth animations, 
+                    and modern UI design. Implemented advanced CSS techniques and JavaScript interactions.
+                </div>
+                <div class="project-tech">Technologies: HTML5, CSS3, JavaScript, Responsive Design</div>
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="section">
+            <h2 class="section-title">Achievements & Highlights</h2>
+            <ul class="achievement-list">
+                <li>Successfully completed multiple full-stack web development projects</li>
+                <li>Proficient in MERN stack development with hands-on project experience</li>
+                <li>Strong understanding of responsive design principles and modern web standards</li>
+                <li>Experience with database design and management using MongoDB</li>
+                <li>Active contributor to open-source projects on GitHub</li>
+                <li>Continuously learning new technologies and staying updated with industry trends</li>
+            </ul>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="section">
+            <h2 class="section-title">Additional Information</h2>
+            <div class="summary">
+                <strong>Languages:</strong> English (Fluent), Hindi (Native), Gujarati (Native)<br>
+                <strong>Interests:</strong> Web Development, Problem Solving, Open Source Contribution, Technology Trends<br>
+                <strong>Availability:</strong> Open to internships, part-time opportunities, and freelance projects
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth printing experience
+        window.addEventListener('beforeprint', function() {
+            document.title = 'Naresh_Chaudhary_Resume';
+        });
+        
+        // Add keyboard shortcut for printing
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
